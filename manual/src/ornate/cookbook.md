@@ -197,13 +197,15 @@ and expose them to the global namespace by using [expose-loader](https://github.
 Thus, you can write a custom webpack configuration file that uses this loaders to expose the required 
 modules to the global namespace. Typically, this file will look like this:
 
-~~~ javascript src=../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/global-namespace-with-jsdom-unit-testing/common.webpack.config.js
+~~~ 
+javascript src=../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/global-namespace-with-jsdom-unit-testing/common.webpack.config.js
 ~~~
 
 Also, tweak your `build.sbt` to add the corresponding NPM dependencies and to use the
 custom webpack configuration file: 
 
-~~~ scala src=../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/global-namespace-with-jsdom-unit-testing/build.sbt#relevant-settings
+~~~ 
+scala src=../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/global-namespace-with-jsdom-unit-testing/build.sbt#relevant-settings
 ~~~
 
 You can find a fully working example
@@ -218,17 +220,20 @@ need to be exposed as several entry points, this will not work.
 In such a case, you can use `BundlingMode.LibraryAndApplication()`.
 
 `build.sbt`:
-~~~ scala src=../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/library/build.sbt#relevant-settings
+~~~ 
+scala src=../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/library/build.sbt#relevant-settings
 ~~~
 
 Then, assuming that you defined the following library:
 
-~~~ scala src="../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/library/src/main/scala/example/Library.scala#library-definition"
+~~~ 
+scala src="../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/library/src/main/scala/example/Library.scala#library-definition"
 ~~~
 
 You can call its methods as follows from your JavaScript code:
 
-~~~ scala src="../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/library/index.html#library-usage"
+~~~ 
+scala src="../../../sbt-scalajs-bundler/src/sbt-test/sbt-scalajs-bundler/library/index.html#library-usage"
 ~~~
 
 ## How to improve the performance of the bundling process? {#performance}
